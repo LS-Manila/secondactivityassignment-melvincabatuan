@@ -6,7 +6,7 @@ This assignment illustrates the linking and passing data between activities usin
 
 ## Problem:
 
-Design and Implement an Android application that determines the day of the week (Sunday through Saturday) given any date entered by the user. You could use this program, for example, to determine what day of the week you were born or what day of the week an upcoming exam is. Use Zeller's congruence algorithm to calculate the day of the week. The output day should be printed in a second Android activity.
+Design and implement an Android application that determines the day of the week (Sunday through Saturday) given any date entered by the user. You could use this program, for example, to determine what day of the week you were born or what day of the week an upcoming exam is. Use Zeller's congruence algorithm to calculate the day of the week. The output day should be printed in a second Android activity.
 
 ## Formula:
 
@@ -35,6 +35,32 @@ https://classroom.github.com/assignment-invitations/a608021886fe020a5b777963b6be
 ## Sample Solution:
 
 https://github.com/DeLaSalleUniversity-Manila/secondactivityassignment-melvincabatuan
+
+## Keypoint:
+
+In the MainActivity.java:
+
+```Java
+       // Intent to go to the second activity
+        Intent i = new Intent(this, SecondActivity.class);
+
+        // Put attachment data along with the intent
+        i.putExtra("message", day_text);
+
+        startActivity(i);
+```
+
+In the SecondActivity.java
+
+```Java
+ private void handleIntent(){
+        Intent i = getIntent();
+        String day_out = i.getStringExtra("message");
+        TextView tv_out = (TextView) findViewById(R.id.textViewOut);
+        tv_out.setText(day_out);
+    }
+```
+
 
 ## Submission Procedure with Git: 
 
