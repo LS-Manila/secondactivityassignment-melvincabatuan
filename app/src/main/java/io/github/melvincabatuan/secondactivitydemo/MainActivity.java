@@ -50,11 +50,7 @@ public class MainActivity extends AppCompatActivity {
             month = 0;
         }
 
-        // Adjust the month for the Zeller's formula
-        if (month == 1 || month == 2) {
-                month += 12;
-                year--;
-        }
+
 
         try {
             s = et_year.getText().toString();
@@ -65,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
             year = 0;
             century = 0;
         }
+        
+        
+         // Adjust the month for the Zeller's formula
+        if (month == 1 || month == 2) {
+                month += 12;
+                year--;
+        }
+        
+        
 
         // Update the TextViews (in case an entry was left out)
         et_day.setText(day.toString());
