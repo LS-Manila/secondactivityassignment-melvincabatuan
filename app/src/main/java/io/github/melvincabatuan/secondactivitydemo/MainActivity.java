@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
             month = 0;
         }
 
-        if (month == 1)
-            month = 13;
-        else if (month == 2)
-            month = 14;
+        // Adjust the month for the Zeller's formula
+        if (month == 1 || month == 2) {
+                month += 12;
+                year--;
+        }
 
         try {
             s = et_year.getText().toString();
