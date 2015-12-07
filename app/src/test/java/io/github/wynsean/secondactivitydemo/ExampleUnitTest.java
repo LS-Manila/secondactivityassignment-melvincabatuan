@@ -1,4 +1,4 @@
-package io.github.melvincabatuan.secondactivitydemo;
+package io.github.wynsean.secondactivitydemo;
 
 import org.junit.Test;
 
